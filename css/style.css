@@ -429,7 +429,7 @@ body.lock {
   object-fit: contain;
 }
 
-.members__card-lable {
+.members__card-label {
   padding: 10px;
   font-size: 16px;
   font-weight: 500;
@@ -744,7 +744,7 @@ body.lock {
 
   .contacts__description,
   .default-input,
-  .members__card-lable,
+  .members__card-label,
   .events__line-item {
     font-size: 15px;
     line-height: 22px;
@@ -1002,7 +1002,7 @@ body.lock {
 
   .contacts__description,
   .default-input,
-  .members__card-lable,
+  .members__card-label,
   .events__line-item {
     font-size: 15px;
     line-height: 26px;
