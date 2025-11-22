@@ -61,6 +61,7 @@
 
 html {
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -238,20 +239,21 @@ body.lock {
 .socials {
   display: flex;
   justify-content: center;
-  gap: 4px;
+  gap: 5px;
 }
 
 .social-link {
   position: relative;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 500;
-  line-height: 22px;
+  line-height: 21px;
+  letter-spacing: -0.1px;
   color: var(--text-gray);
 }
 
 .social-link:not(:last-child)::after {
   content: '·';
-  margin-left: 4px;
+  margin-left: 5px;
   color: var(--text-white);
 }
 
@@ -284,7 +286,10 @@ body.lock {
   text-align: center;
 }
 
-.hero__text {
+.hero__texts {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
   font-size: 14px;
   font-weight: 400;
   line-height: 22px;
@@ -292,7 +297,7 @@ body.lock {
 
 .hero__text-accent {
   color: var(--text-blue);
-  font-weight: 600;
+  font-weight: 800;
 }
 
 .button {
@@ -300,7 +305,7 @@ body.lock {
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 10px 22px;
+  padding: 10px 16px;
   border-radius: 10px;
   color: var(--text-white);
 }
@@ -311,7 +316,7 @@ body.lock {
   font-size: 18px;
   font-weight: 600;
   line-height: 34px;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.7px;
   text-align: center;
   text-transform: uppercase;
   color: var(--text-black);
@@ -379,9 +384,10 @@ body.lock {
 .red-button {
   width: fit-content;
   margin-top: 12px;
+  padding: 10px 17px;
   background-color: var(--red-button);
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 12px;
+  font-weight: 800;
   line-height: 18px;
 }
 
@@ -425,7 +431,7 @@ body.lock {
 }
 
 .members__card-lable {
-  padding: 8px;
+  padding: 10px;
   font-size: 16px;
   font-weight: 500;
   line-height: 22px;
@@ -512,7 +518,7 @@ body.lock {
   width: 100%;
 }
 
-.contacts__form {
+.default-form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -527,30 +533,30 @@ body.lock {
   gap: 8px;
 }
 
-.contacts__form-field {
+.default-form-field {
   display: flex;
   flex-direction: column;
   gap: 8px;
   width: 100%;
 }
 
-.contacts__inputs {
+.default-inputs {
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 16px;
+  gap: 18px;
 }
 
-.contacts__input-label {
+.default-input-label {
   font-size: 14px;
   font-weight: 500;
   line-height: 21px;
   color: var(--text-gray);
 }
 
-.contacts__input {
+.default-input {
   width: 100%;
-  padding: 10px 12px;
+  padding: 8px 12px;
   border: 1px solid var(--borders-dark-blue);
   border-radius: 6px;
   background-color: var(--background-dark);
@@ -562,6 +568,9 @@ body.lock {
 
 .contacts__input::placeholder {
   font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
 }
 
 .contacts__map {
@@ -595,6 +604,7 @@ body.lock {
   flex-direction: column-reverse;
   gap: 24px;
   padding: 26px 32px;
+  border-top: 1px solid var(--borders-dark-blue);
 }
 
 .footer__info {
@@ -602,9 +612,9 @@ body.lock {
   flex-direction: column;
   align-items: center;
   gap: 12px;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 500;
-  line-height: 22px;
+  line-height: 21px;
 }
 
 .footer__contacts {
@@ -615,11 +625,94 @@ body.lock {
 }
 
 .footer__copyright {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 18px;
   text-align: center;
   color: var(--text-gray);
+}
+
+/* Ticket Modal */
+
+.ticket-modal {
+  position: fixed;
+  inset: 0;
+  display: flex; /* оставляем flex для центровки */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  pointer-events: none; /* чтобы скрытая модалка не ловила клики */
+}
+
+.ticket-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(21, 24, 33, 0.6);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.ticket-modal__window {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: var(--background-dark);
+  padding: 32px;
+  border-radius: 12px;
+  width: calc(100% - (32px * 3));
+  color: white;
+  border: 1px solid var(--borders-dark-blue);
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.ticket-modal--active {
+  pointer-events: auto;
+}
+
+.ticket-modal--active .ticket-modal__overlay {
+  opacity: 1;
+}
+
+.ticket-modal--active .ticket-modal__window {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.ticket-modal__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 22px;
+  background: none;
+  border: none;
+  color: var(--background-white);
+  cursor: pointer;
+}
+
+.ticket-modal__label {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.ticket-modal__input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--borders-dark-blue);
+  background: var(--background-light);
+  color: var(--text-white);
+}
+
+.ticket-modal__submit {
+  width: 100%;
+  margin-top: 10px;
 }
 
 /* Mobile 480+px */
@@ -643,7 +736,7 @@ body.lock {
     gap: 12px;
   }
 
-  .contacts__form {
+  .default-form {
     gap: 16px;
   }
 
@@ -652,11 +745,15 @@ body.lock {
   }
 
   .contacts__description,
-  .contacts__input,
+  .default-input,
   .members__card-lable,
   .events__line-item {
     font-size: 15px;
     line-height: 22px;
+  }
+
+  .ticket-modal__window {
+    width: calc(100% - (38px * 3));
   }
 }
 
@@ -702,10 +799,10 @@ body.lock {
   }
 
   .contacts__input-group {
-    gap: 16px;
+    gap: 14px;
   }
 
-  .contacts__form {
+  .default-form {
     gap: 20px;
   }
 
@@ -730,11 +827,11 @@ body.lock {
   }
 
   .contacts__description,
-  .contacts__input,
+  .default-input,
   .members__card-lable,
   .events__line-item {
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 15px;
+    line-height: 26px;
   }
 
   .events,
@@ -786,6 +883,10 @@ body.lock {
     align-items: start;
     gap: 18px;
   }
+
+  .ticket-modal__window {
+    width: calc(100% - (48px * 3));
+  }
 }
 
 /* Tablet 1024+px */
@@ -810,7 +911,7 @@ body.lock {
   .events__header {
     display: flex;
     align-items: center;
-    padding: 16px 180px 16px 16px;
+    padding: 16px 162px 16px 16px;
     width: 100%;
   }
 
@@ -829,7 +930,7 @@ body.lock {
 
   .events__line {
     flex-direction: row;
-    padding: 16px;
+    padding: 13px 16px;
   }
 
   .events__line-item {
@@ -888,13 +989,189 @@ body.lock {
     gap: 28px;
   }
 
-  .contacts__form {
+  .default-form {
     align-items: start;
+  }
+
+  .contacts__input--textarea {
+    min-height: 84px;
   }
 
   .contacts__map {
     align-items: start;
     gap: 16px;
     padding: 16px;
+  }
+
+  .footer__content {
+    padding: 42px 118px;
+  }
+
+  .ticket-modal__window {
+    width: calc(100% - (118px * 3));
+  }
+}
+
+/* Laptop 1280+px */
+
+@media (min-width: 1280px) {
+  .header {
+    padding: 30px 86px;
+  }
+
+  .hero__content {
+    padding: 96px 182px;
+  }
+
+  .events,
+  .members,
+  .our-story,
+  .contacts {
+    padding: 58px 182px 36px;
+  }
+
+  .events__list-title {
+    padding: 18px;
+    font-size: 23px;
+  }
+
+  .events__header {
+    display: flex;
+    align-items: center;
+    padding: 8px 164px 8px 16px;
+    width: 100%;
+  }
+
+  .footer__content {
+    padding: 46px 182px;
+  }
+
+  .footer__info {
+    gap: 24px;
+  }
+
+  .ticket-modal__window {
+    width: calc(100% - (182px * 3));
+  }
+}
+
+/* PC 1600+px */
+
+@media (min-width: 1600px) {
+  .header {
+    padding: 20px 265px;
+  }
+
+  .header__navigation-items {
+    gap: 22px;
+  }
+
+  .hero__content {
+    padding: 137px 377px 123px;
+    gap: 32px;
+  }
+
+  .hero__title {
+    font-size: 50px;
+    line-height: 66px;
+    letter-spacing: 1.8px;
+  }
+
+  .hero__subtitle {
+    letter-spacing: 0.1px;
+  }
+
+  .hero__texts {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .hero__button {
+    margin-top: 21px;
+  }
+
+  .events {
+    padding: 64px 376px;
+  }
+
+  .events__header {
+    padding: 8px 302px 8px 16px;
+  }
+
+  .events__line {
+    padding: 12px 154px 12px 16px;
+  }
+
+  .events__list-title {
+    padding: 18px 20px;
+    font-size: 24px;
+  }
+
+  .events__line-button {
+    font-size: 13px;
+  }
+
+  .members {
+    gap: 40px;
+    padding: 68px 358px 82px;
+  }
+
+  .section-title {
+    font-size: 32px;
+    line-height: 48px;
+  }
+
+  .our-story {
+    padding: 64px 376px 62px;
+  }
+
+  .our-story__content {
+    gap: 26px;
+  }
+
+  .our-story__title {
+    letter-spacing: -0.4px;
+  }
+
+  .our-story__text {
+    margin-bottom: 17px;
+    font-size: 16px;
+    line-height: 27px;
+  }
+
+  .our-story__image {
+    width: 38%;
+  }
+
+  .contacts {
+    padding: 66px 376px 78px;
+    gap: 36px;
+  }
+
+  .contacts__content {
+    gap: 38px;
+  }
+
+  .contacts__description {
+    font-size: 17px;
+  }
+
+  .contacts__map {
+    width: 96%;
+    padding: 20px;
+  }
+
+  .contacts__submit-button {
+    margin-top: 0;
+    padding: 14px 32px;
+    font-size: 16px;
+  }
+
+  .footer__content {
+    padding: 46px 376px;
+  }
+
+  .ticket-modal__window {
+    width: calc(100% - (377px * 3));
   }
 }

@@ -16,16 +16,16 @@
       <nav class="header__navigation">
         <ul class="header__navigation-items">
           <li class="header__navigation-item">
-            <a href="#" class="header__navigation-link">Про гурт</a>
+            <a href="#ourStory" class="header__navigation-link">Про гурт</a>
           </li>
           <li class="header__navigation-item">
-            <a href="#" class="header__navigation-link">Концерти</a>
+            <a href="#events" class="header__navigation-link">Концерти</a>
           </li>
           <li class="header__navigation-item">
-            <a href="#" class="header__navigation-link">Галерея</a>
+            <a href="#members" class="header__navigation-link">Галерея</a>
           </li>
           <li class="header__navigation-item">
-            <a href="#" class="header__navigation-link">Контакти</a>
+            <a href="#contacts" class="header__navigation-link">Контакти</a>
           </li>
         </ul>
       </nav>
@@ -43,16 +43,24 @@
         <nav class="mobile-menu__navigation">
           <ul class="mobile-menu__navigation-items">
             <li class="mobile-menu__navigation-item">
-              <a href="#" class="mobile-menu__navigation-link">Про гурт</a>
+              <a href="#ourStory" class="mobile-menu__navigation-link"
+                >Про гурт</a
+              >
             </li>
             <li class="mobile-menu__navigation-item">
-              <a href="#" class="mobile-menu__navigation-link">Концерти</a>
+              <a href="#events" class="mobile-menu__navigation-link"
+                >Концерти</a
+              >
             </li>
             <li class="mobile-menu__navigation-item">
-              <a href="#" class="mobile-menu__navigation-link">Галерея</a>
+              <a href="#members" class="mobile-menu__navigation-link"
+                >Галерея</a
+              >
             </li>
             <li class="mobile-menu__navigation-item">
-              <a href="#" class="mobile-menu__navigation-link">Контакти</a>
+              <a href="#contacts" class="mobile-menu__navigation-link"
+                >Контакти</a
+              >
             </li>
           </ul>
         </nav>
@@ -67,7 +75,7 @@
             href="https://www.youtube.com/"
             target="_blank"
             class="mobile-menu__social-link social-link"
-            >Youtube</a
+            >YouTube</a
           >
           <a
             href="https://www.facebook.com/"
@@ -86,30 +94,30 @@
 
       <section class="hero">
         <div class="hero__content">
-          <h1 class="hero__title">
-            Гурт «Грим та Грім»
-          </h1>
+          <h1 class="hero__title">Гурт «Грим та Грім»</h1>
           <h2 class="hero__subtitle">
             Справжній Український рок, який гуркоче в серці.
           </h2>
-          <p class="hero__text">
-            «Грим та Грім» — це поєднання
-            <span class="hero__text-accent">потужних</span> гітарних рифів,
-            чесних текстів і вибухової енергії сцени. Ми граємо для тих, хто
-            цінує живий звук, свободу та силу музики.
-          </p>
-          <p class="hero__text">
-            <span class="hero__text-accent">Наші концерти</span> — це завжди
-            контакт з залом, драйв і емоції. Приєднуйся до нас на найближчих
-            виступах і відчуй цей саунд наживо!
-          </p>
-          <button class="hero__button button">Замовити квиток</button>
+          <div class="hero__texts">
+            <p class="hero__text">
+              «Грим та Грім» — це поєднання
+              <span class="hero__text-accent">потужних</span> гітарних рифів,
+              чесних текстів і вибухової енергії сцени. Ми граємо для тих, хто
+              цінує живий звук, свободу та силу музики.
+            </p>
+            <p class="hero__text">
+              <span class="hero__text-accent">Наші концерти</span> — це завжди
+              контакт з залом, драйв і емоції. Приєднуйся до нас на найближчих
+              виступах і відчуй цей саунд наживо!
+            </p>
+            <a href="#events" class="hero__button button">Замовити квиток</a>
+          </div>
         </div>
       </section>
 
       <!-- Events -->
 
-      <section class="events">
+      <section id="events" class="events">
         <div class="events__list">
           <h2 class="events__list-title">Найближчі концерти</h2>
           <div class="events__sheet">
@@ -195,13 +203,13 @@
 
       <!-- Members -->
 
-      <section class="members">
+      <section id="members" class="members">
         <h2 class="members__title section-title">Учасники гурту</h2>
         <div class="members__cards">
           <div class="members__card">
             <img
               src="images/members/01.webp"
-              alt=""
+              alt="Guitarist"
               class="members__card-image"
             />
             <span class="members__card-lable">Максим — гітара</span>
@@ -209,7 +217,7 @@
           <div class="members__card">
             <img
               src="images/members/02.webp"
-              alt=""
+              alt="Singer"
               class="members__card-image"
             />
             <span class="members__card-lable">Олена — вокал</span>
@@ -217,7 +225,7 @@
           <div class="members__card">
             <img
               src="images/members/03.webp"
-              alt=""
+              alt="Drummer"
               class="members__card-image"
             />
             <span class="members__card-lable">Тарас — барабани</span>
@@ -227,13 +235,13 @@
 
       <!-- Our Story -->
 
-      <section class="our-story">
+      <section id="ourStory" class="our-story">
         <div class="our-story__content">
           <h2 class="our-story__title section-title">Наша Історія</h2>
           <div class="our-story__content-block">
             <img
               src="images/our-story-image.webp"
-              alt=""
+              alt="A band's stage performance"
               class="our-story__image"
             />
             <div class="our-story__texts">
@@ -270,7 +278,7 @@
 
       <!-- Contact Us -->
 
-      <section class="contacts">
+      <section id="contacts" class="contacts">
         <div class="contacts__header">
           <h2 class="contacts__title section-title">Зв'яжись з нами</h2>
           <p class="contacts__description">
@@ -278,23 +286,23 @@
           </p>
         </div>
         <div class="contacts__content">
-          <form action="#" method="post" class="contacts__form">
-            <div class="contacts__inputs">
+          <form action="#" method="post" class="contacts__form default-form">
+            <div class="contacts__inputs default-inputs">
               <div class="contacts__input-group">
-                <div class="contacts__form-field">
-                  <label for="name" class="contacts__input-label">Ім'я</label>
+                <div class="contacts__form-field default-form-field">
+                  <label for="name" class="contacts__input-label default-input-label">Ім'я</label>
                   <input
-                    class="contacts__input"
+                    class="contacts__input default-input"
                     type="text"
                     id="name"
                     name="name"
                     required
                   />
                 </div>
-                <div class="contacts__form-field">
-                  <label for="email" class="contacts__input-label">Email</label>
+                <div class="contacts__form-field default-form-field">
+                  <label for="email" class="contacts__input-label default-input-label">Email</label>
                   <input
-                    class="contacts__input"
+                    class="contacts__input default-input"
                     type="email"
                     id="email"
                     name="email"
@@ -302,12 +310,12 @@
                   />
                 </div>
               </div>
-              <div class="contacts__form-field">
-                <label for="message" class="contacts__input-label"
+              <div class="contacts__form-field default-form-field">
+                <label for="message" class="contacts__input-label default-input-label"
                   >Повідомлення</label
                 >
                 <textarea
-                  class="contacts__input"
+                  class="contacts__input contacts__input--textarea default-input"
                   id="message"
                   name="message"
                   placeholder="Розкажи про свої ідеї..."
@@ -365,7 +373,7 @@
             href="https://www.youtube.com/"
             target="_blank"
             class="footer__social-link social-link"
-            >Youtube</a
+            >YouTube</a
           >
           <a
             href="https://www.facebook.com/"
@@ -376,5 +384,65 @@
         </div>
       </div>
     </footer>
+
+    <!-- Ticket Modal -->
+
+    <div class="ticket-modal" id="ticketModal">
+      <div class="ticket-modal__overlay"></div>
+
+      <div class="ticket-modal__window">
+        <button class="ticket-modal__close" id="ticketModalClose">×</button>
+
+        <h3 class="ticket-modal__title">Замовлення квитка</h3>
+
+        <form
+          action="#"
+          method="post"
+          class="ticket-modal__form"
+          id="ticketForm"
+        >
+          <div class="ticket-modal__inputs default-inputs">
+            <div class="ticket-modal__form-field default-form-field">
+              <label for="name" class="ticket-modal__input-label default-input-label">Ім'я</label>
+              <input
+                class="ticket-modal__input default-input"
+                type="text"
+                id="name"
+                name="name"
+                required
+              />
+            </div>
+            <div class="ticket-modal__form-field default-form-field">
+              <label for="email" class="ticket-modal__input-label default-input-label">Email</label>
+              <input
+                class="ticket-modal__input default-input"
+                type="email"
+                id="email"
+                name="email"
+                required
+              />
+            </div>
+            <div class="ticket-modal__form-field default-form-field">
+              <label for="message" class="ticket-modal__input-label default-input-label"
+                >Повідомлення</label
+              >
+              <textarea
+                class="ticket-modal__input default-input"
+                id="message"
+                name="message"
+                placeholder=""
+                required
+              ></textarea>
+            </div>
+          </div>
+          <button
+            type="submit"
+            class="ticket-modal__submit-button button red-button"
+          >
+            Відправити
+          </button>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
