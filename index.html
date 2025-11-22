@@ -12,7 +12,9 @@
     <!-- Header -->
 
     <header class="header">
-      <a href="index.html" class="header__logo logo">G&G</a>
+      <div class="logo__wrapper">
+        <a href="index.html" class="header__logo logo">G&G</a>
+      </div>
       <nav class="header__navigation">
         <ul class="header__navigation-items">
           <li class="header__navigation-item">
@@ -71,11 +73,17 @@
             class="mobile-menu__social-link social-link"
             >Instagram</a
           >
+          <span class="mobile-menu__social-link-separator social-link-separator"
+            >·</span
+          >
           <a
             href="https://www.youtube.com/"
             target="_blank"
             class="mobile-menu__social-link social-link"
             >YouTube</a
+          >
+          <span class="mobile-menu__social-link-separator social-link-separator"
+            >·</span
           >
           <a
             href="https://www.facebook.com/"
@@ -206,7 +214,7 @@
       <section id="members" class="members">
         <h2 class="members__title section-title">Учасники гурту</h2>
         <div class="members__cards">
-          <div class="members__card">
+          <div class="members__card card--guitarist">
             <img
               src="images/members/01.webp"
               alt="Guitarist"
@@ -214,7 +222,7 @@
             />
             <span class="members__card-lable">Максим — гітара</span>
           </div>
-          <div class="members__card">
+          <div class="members__card card--vocalist">
             <img
               src="images/members/02.webp"
               alt="Singer"
@@ -222,7 +230,7 @@
             />
             <span class="members__card-lable">Олена — вокал</span>
           </div>
-          <div class="members__card">
+          <div class="members__card card--drummer">
             <img
               src="images/members/03.webp"
               alt="Drummer"
@@ -290,7 +298,11 @@
             <div class="contacts__inputs default-inputs">
               <div class="contacts__input-group">
                 <div class="contacts__form-field default-form-field">
-                  <label for="name" class="contacts__input-label default-input-label">Ім'я</label>
+                  <label
+                    for="name"
+                    class="contacts__input-label default-input-label"
+                    >Ім'я</label
+                  >
                   <input
                     class="contacts__input default-input"
                     type="text"
@@ -300,7 +312,11 @@
                   />
                 </div>
                 <div class="contacts__form-field default-form-field">
-                  <label for="email" class="contacts__input-label default-input-label">Email</label>
+                  <label
+                    for="email"
+                    class="contacts__input-label default-input-label"
+                    >Email</label
+                  >
                   <input
                     class="contacts__input default-input"
                     type="email"
@@ -311,7 +327,9 @@
                 </div>
               </div>
               <div class="contacts__form-field default-form-field">
-                <label for="message" class="contacts__input-label default-input-label"
+                <label
+                  for="message"
+                  class="contacts__input-label default-input-label"
                   >Повідомлення</label
                 >
                 <textarea
@@ -366,19 +384,25 @@
           <a
             href="https://www.instagram.com/"
             target="_blank"
-            class="footer__social-link social-link"
+            class="footer__social-link social-link footer__social-link--instagram"
             >Instagram</a
+          >
+          <span class="footer__social-link-separator social-link-separator"
+            >·</span
           >
           <a
             href="https://www.youtube.com/"
             target="_blank"
-            class="footer__social-link social-link"
+            class="footer__social-link social-link footer__social-link--youtube"
             >YouTube</a
+          >
+          <span class="footer__social-link-separator social-link-separator"
+            >·</span
           >
           <a
             href="https://www.facebook.com/"
             target="_blank"
-            class="footer__social-link social-link"
+            class="footer__social-link social-link footer__social-link--facebook"
             >Facebook</a
           >
         </div>
@@ -403,7 +427,11 @@
         >
           <div class="ticket-modal__inputs default-inputs">
             <div class="ticket-modal__form-field default-form-field">
-              <label for="name" class="ticket-modal__input-label default-input-label">Ім'я</label>
+              <label
+                for="name"
+                class="ticket-modal__input-label default-input-label"
+                >Ім'я</label
+              >
               <input
                 class="ticket-modal__input default-input"
                 type="text"
@@ -413,7 +441,11 @@
               />
             </div>
             <div class="ticket-modal__form-field default-form-field">
-              <label for="email" class="ticket-modal__input-label default-input-label">Email</label>
+              <label
+                for="email"
+                class="ticket-modal__input-label default-input-label"
+                >Email</label
+              >
               <input
                 class="ticket-modal__input default-input"
                 type="email"
@@ -423,7 +455,9 @@
               />
             </div>
             <div class="ticket-modal__form-field default-form-field">
-              <label for="message" class="ticket-modal__input-label default-input-label"
+              <label
+                for="message"
+                class="ticket-modal__input-label default-input-label"
                 >Повідомлення</label
               >
               <textarea
