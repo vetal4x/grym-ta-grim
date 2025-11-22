@@ -24,6 +24,7 @@ const ticketModalClose = document.getElementById("ticketModalClose");
 const ticketForm = document.getElementById("ticketForm");
 
 // Order ticket button
+
 const ticketButtons = document.querySelectorAll(".events__line-button");
 
 // Open Modal Window and compensate for scrollbar width
@@ -61,7 +62,13 @@ ticketModal.querySelector(".ticket-modal__overlay").addEventListener("click", cl
 
 ticketForm.addEventListener("submit", e => {
   e.preventDefault();
-  alert("Ваш запит успішно відправлений!");
+
+  const name = ticketForm.querySelector("#ticketName").value;
+  const email = ticketForm.querySelector("#ticketEmail").value;
+  const message = ticketForm.querySelector("#ticketMessage").value;
+
+  alert(`Дякуємо, ${name}! Ваше повідомлення успішно відправлено.`);
+
   ticketForm.reset();
   closeModal();
 });
@@ -74,7 +81,6 @@ const contactsForm = document.querySelector(".contacts__form");
 if (contactsForm) {
   contactsForm.addEventListener("submit", (e) => {
     e.preventDefault();
-
 
     const name = contactsForm.querySelector("#name").value;
 
